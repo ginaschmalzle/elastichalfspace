@@ -1,7 +1,0 @@
-# GMT common arguments shelf
--B50:Distance:/10:Rate:WSen
--JX15
--R-150/150/-30/30
--Y5
--jX15
-EOF

@@ -7,7 +7,7 @@
 #int=1 
 #Vo=50
 #d=30
-plot="contour"  # Contour or lines
+plot="contour"  # contour or lines
 # Import math modules
 import numpy as np
 import math 
