@@ -1,0 +1,22 @@
+#!/bin/bash 
+
+# This file will make a postscript file called display.ps, which plots the model profile 
+# and GPS data.  You will need GMT (General Mapping Tools) and a ps viewer to image the results.
+
+# Define the names of I/O files
+out=display.ps
+in=vel.txt
+gps=data.txt
+
+# Define plot region
+r=-R-150/150/-30/30  #Region
+j=-JX15 # Projection
+b=-B50:Distance:/10:Rate:WSen  #Tick marks and labels
+
+
+awk '{print($1,$2)}' $in |gmt psxy  $r $j $b -K -P  -W1 -Y5 > $out
+awk '{print($1,$2)}' $in |gmt psxy -K -R -O -J -Sc0.05 -G0 >> $out 
+awk '{print($2,$3,$1)}' $gps |gmt psxy -R -J -Ey -St0.4 -G0 -K -O >> $out
+awk '{print($2,$3,$1)}' $gps |gmt psxy -R -J -Ey -St.3 -G255 -K -O >> $out
+
+open $out

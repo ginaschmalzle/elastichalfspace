@@ -1,0 +1,11 @@
+#!/bin/bash
+# This program will automatically compile and run ehalf.f.  In addition, it will plot results.
+
+# Compile, name executable ehalf
+gfortran ehalf.f -o ehalf
+
+# Run program
+./ehalf
+
+# Run display_me which prints results to a postscript file.
+./display_me

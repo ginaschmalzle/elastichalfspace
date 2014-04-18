@@ -1,0 +1,29 @@
+#!/bin/bash
+
+out=param
+chi=chi2.dat
+# make nested loop
+Rmin=10
+Rmax=50
+dmin=1
+dmax=20
+
+rm $chi
+echo "R(mm/yr) d(km) RedChi2" > $chi
+for (( d=$dmin; d<=$dmax; d++ ))
+do
+for (( R=$Rmin; R<=$Rmax; R++ ))
+do
+	echo "xmin xmax interval" > $out
+	echo "xmin xmax interval" >> $out
+	echo "-150 150 1" >> $out
+	echo "Vo" >> $out
+	echo $R >> $out
+	echo "d" >> $out
+	echo $d >> $out
+	./ehalf | tail -1 >> $chi
+done
+done
+
+	awk '{print($3)}' $chi | minmax -H -C | awk '{print ($1)}' > temp.dat
+	more $chi | egrep -v temp.dat 	

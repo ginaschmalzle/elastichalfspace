@@ -1,0 +1,9 @@
+xmin=-150.
+xmax=150. 
+int=1. 
+Vo=34.
+d=15.
+dmin=1.
+dmax=100.
+Vmin=0.
+Vmax=100.
