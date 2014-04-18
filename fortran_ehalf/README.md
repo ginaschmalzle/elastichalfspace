@@ -57,6 +57,6 @@ You can estimate the low misfit model -- ie., find the model with the smallest r
 
 PYTHON PROGRAM DESCRIPTION
 
-The Python progam provides the same functionality as the fortran program, except I include an alternative method 
+The Python progam (savburf.py) provides the same functionality as the fortran program, except I include an alternative method 
 to solve for the low misfit model given a defined locking depth. Here I invert the data using singular value decomposition.
 
